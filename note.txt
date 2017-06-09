@@ -1,0 +1,44 @@
+app.use(express.static(path.join(__dirname, 'public'))); 
+
+=====
+Express to serve static objects from the /public/ dir, but to make them actually seem like they're coming from the top level (it also does this with the views directory). For example, the images directory is c:\node\nodetest1\public\images … but it is accessed at http://localhost:3000/images
+
+=====
+
+
+module.exports = app;
+
+====
+
+A core part of Node is that basically all modules export an object which can easily be called elsewhere in the code. Our master app exports its app object.
+
+====
+
+
+app.use('/', routes);
+app.use('/users', users); 
+
+====
+
+This directives are telling Express what route files to use.
+
+the users route ( /users ) file might contain routes for adding users, deleting them, updating them, and so forth, while a new route file called "locations" might handle adding, editing, deleting and displaying location data (in an app for which that was required). 
+
+====
+
+
+res.render('helloworld', { title: 'Hello, World!' });
+
+====
+
+response renders the helloword.jade page
+
+
+====
+
+
+
+
+
+
+
